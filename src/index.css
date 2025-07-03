@@ -1,0 +1,98 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 210 40% 15%;
+
+    --card: 210 50% 98%;
+    --card-foreground: 210 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 15%;
+
+    --primary: 200 85% 45%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 90%;
+    --secondary-foreground: 210 40% 15%;
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 210 20% 45%;
+
+    --accent: 190 90% 65%;
+    --accent-foreground: 210 40% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 85%;
+    --input: 214.3 31.8% 85%;
+    --ring: 200 85% 45%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 50% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 210 50% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 210 50% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 85% 45%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 20%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 190 90% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 200 85% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.stat-card {
+  @apply relative overflow-hidden bg-gradient-to-tr from-forensic-medium to-forensic-dark border border-forensic-light/30 rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:shadow-forensic-light/10;
+}
+
+.analysis-section {
+  @apply bg-gradient-to-b from-background to-secondary/50 border border-border rounded-lg p-6 transition-all duration-300;
+}
+
+.dashboard-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+.faded-edge {
+  @apply relative;
+}
+
+.faded-edge::after {
+  @apply content-[''] absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent;
+}
